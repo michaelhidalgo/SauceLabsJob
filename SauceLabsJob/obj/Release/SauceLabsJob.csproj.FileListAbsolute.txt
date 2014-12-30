@@ -1,0 +1,7 @@
+C:\temp\SauceLabsJob\SauceLabsJob\bin\Release\SauceLabsJob.exe.config
+C:\temp\SauceLabsJob\SauceLabsJob\bin\Release\SauceLabsJob.exe
+C:\temp\SauceLabsJob\SauceLabsJob\bin\Release\SauceLabsJob.pdb
+C:\temp\SauceLabsJob\SauceLabsJob\bin\Release\Newtonsoft.Json.dll
+C:\temp\SauceLabsJob\SauceLabsJob\bin\Release\Newtonsoft.Json.xml
+C:\temp\SauceLabsJob\SauceLabsJob\obj\Release\SauceLabsJob.exe
+C:\temp\SauceLabsJob\SauceLabsJob\obj\Release\SauceLabsJob.pdb
