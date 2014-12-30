@@ -11,7 +11,7 @@ namespace SauceLabsJob
     {
         private static string baseUrl = @"https://saucelabs.com/rest/v1/securityinnovation";
         private static string userName = "securityinnovation";
-        private static string AccesKey = "a1c1422c-89f0-4401-8413-61e462396e27";
+        private static string AccesKey = "";
         private static string Path = @"C:\temp\";
 
         static void Main(string[] args)
@@ -22,9 +22,12 @@ namespace SauceLabsJob
             var jobsUrl = baseUrl + "/jobs?full=true&from=" + fromTime;
             var uri = new Uri(jobsUrl);
             var jobsList = ProcessHttpRequest(uri);
+           
+
             if (jobsList != "[]")
             {
                 dynamic jsonResponse = JArray.Parse(jobsList);
+          
                 foreach (dynamic response in jsonResponse)
                 {
                     var testName= response.name;
@@ -123,11 +126,10 @@ namespace SauceLabsJob
         {
             foreach (dynamic response in jsonResponse)
             {
-                if (response.passed.Value == null || response.passed.Value == false || response.error !=null)
-                {
+               
                     var URL = String.Format("{0}/jobs/{1}", baseUrl, response.id);
                     HttpDelete(new Uri(URL));
-                }
+               
             }
         
         }
