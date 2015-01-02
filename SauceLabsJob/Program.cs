@@ -2,6 +2,7 @@
 using System.Drawing.Imaging;
 using System.IO;
 using System.Drawing;
+using System.Linq;
 using System.Net;
 using Newtonsoft.Json.Linq;
 
@@ -10,8 +11,6 @@ namespace SauceLabsJob
     internal class Program
     {
         private static string baseUrl = @"https://saucelabs.com/rest/v1/securityinnovation";
-        private static string userName = "securityinnovation";
-        private static string AccesKey = "";
         private static string Path = @"C:\temp\";
 
         static void Main(string[] args)
@@ -77,7 +76,14 @@ namespace SauceLabsJob
 
         private static  string Base64EncodingCredentials()
         {
-            var credentials = String.Format("{0}:{1}", userName, AccesKey);
+            var fullPath = String.Format("{0}access\\access.txt", Path);
+
+            var text = System.IO.File.ReadAllText(fullPath);
+            var plainText = text.Split(':').ToList();
+            var userName = plainText.First();
+            var accesKey = plainText.LastOrDefault();
+
+            var credentials = String.Format("{0}:{1}", userName, accesKey);
             var byteArray = System.Text.Encoding.UTF8.GetBytes(credentials);
             var base64Encoding = Convert.ToBase64String(byteArray);
 
