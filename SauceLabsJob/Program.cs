@@ -11,7 +11,7 @@ namespace SauceLabsJob
     internal class Program
     {
         private static string baseUrl = @"https://saucelabs.com/rest/v1/securityinnovation";
-        private static string Path = @"C:\temp\";
+        private static string Path = @"C:\Temp\screenshots\Dropbox\screenshots\";
 
         static void Main(string[] args)
         {
