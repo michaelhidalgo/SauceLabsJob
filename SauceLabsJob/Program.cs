@@ -10,8 +10,9 @@ namespace SauceLabsJob
 {
     internal class Program
     {
-        private static string baseUrl = @"https://saucelabs.com/rest/v1/securityinnovation";
-        private static string Path = @"C:\Temp\screenshots\Dropbox\screenshots\";
+        private static string baseUrl   = @"https://saucelabs.com/rest/v1/securityinnovation";
+        private static string Path      = @"C:\Temp\screenshots\Dropbox\screenshots\";
+        private static string Storage   = @"C:\Temp\";
 
         static void Main(string[] args)
         {
@@ -76,7 +77,7 @@ namespace SauceLabsJob
 
         private static  string Base64EncodingCredentials()
         {
-            var fullPath = String.Format("{0}access\\access.txt", Path);
+            var fullPath = String.Format("{0}access\\access.txt", Storage);
 
             var text = System.IO.File.ReadAllText(fullPath);
             var plainText = text.Split(':').ToList();
