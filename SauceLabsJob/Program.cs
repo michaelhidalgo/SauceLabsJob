@@ -33,15 +33,15 @@ namespace SauceLabsJob
                     var testName= response.name;
                     if (testName != null )
                     {
-                        if (testName.ToString().ToLower().Contains("browserresize"))
-                        {
+                        //if (testName.ToString().ToLower().Contains("browserresize"))
+                        //{
                            //Filtering complete jobs and
                             if (response.record_screenshots.Value && response.status == "complete")
                             {
                                 var jobId = response.id;
                                 DownloadScreenShots(jobId.Value, response);
                             }
-                        }
+                        //}
                     }
 
                 }
